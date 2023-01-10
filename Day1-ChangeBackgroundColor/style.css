@@ -1,0 +1,19 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    padding: 1rem;
+    border: 1px solid #000000;
+    tab-size: 2rem;
+    cursor: pointer;
+}
