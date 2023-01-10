@@ -3,5 +3,8 @@ const randomColor = () => {
 };
 
 const changeColor = () => {
-    document.getElementById("page").style.backgroundColor = "#" + randomColor();
+    let color = randomColor();
+    document.getElementById("page").style.backgroundColor = "#" + color;
+    document.getElementById("color").innerHTML = "#" + color;
+    document.getElementById("button").style.color = "#" + randomColor();
 };
