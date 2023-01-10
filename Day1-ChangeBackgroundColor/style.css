@@ -7,9 +7,14 @@ main {
     min-height: 100vh;
     min-width: 100vw;
     display: flex;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    width: 50%;
 }
 
 h1 {
@@ -21,8 +26,11 @@ h1 {
     font-size: 2rem;
     font-weight: bold;
     border: 3px solid #000000;
-    tab-size: 2rem;
     cursor: pointer;
     background-color: transparent;
     margin-top: 2rem;
+}
+
+.right {
+    width: 50%;
 }
