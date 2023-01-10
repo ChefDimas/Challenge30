@@ -5,15 +5,21 @@ const randomColor = () => {
 
 // return random HSL Color
 const randomHSLColor = () => {
-    h = Math.floor(Math.random() * 360);
-    s = Math.floor(Math.random() * 101) + "%";
-    l = Math.floor(Math.random() * 101) + "%";
+    let h = Math.floor(Math.random() * 360);
+    let s = Math.floor(Math.random() * 101) + "%";
+    let l = Math.floor(Math.random() * 101) + "%";
     return `hsl(${h}, ${s}, ${l})`;
 };
-console.log(randomHSLColor());
+
+const toSHLObject = (hsl) => {
+    const [hue, saturation, lightness] = String(hsl).match(/\d+/g).map(Number);
+    return { hue, saturation, lightness };
+};
+
+console.log(toSHLObject(randomHSLColor()));
 
 // invert HSL color, give complementary color
-function invertHSL(hsl) {
+const invertHSL = (hsl) => {
     invertColor = [];
     let hue = parseInt(hsl.slice(4, 7));
     if (hue <= 180) {
@@ -23,16 +29,16 @@ function invertHSL(hsl) {
         hue -= 180;
         return hue;
     }
-}
-
+};
 console.log(invertHSL(randomHSLColor()));
+console.log(randomColor.s);
 
 //change colors
 const changeColor = () => {
     let color = randomHSLColor();
-    // let invertColor = invertHex(color);
+    let invertColor = invertHSL(color);
     document.getElementById("page").style.backgroundColor = color;
     document.getElementById("color").innerHTML = color;
-    // document.getElementById("color").style.color = "#" + invertColor;
-    // document.getElementById("button").style.color = "#" + invertColor;
+    document.getElementById("color").style.color = "#" + invertColor;
+    document.getElementById("button").style.color = "#" + invertColor;
 };
