@@ -16,22 +16,22 @@ const toSHLObject = (hsl) => {
     return { hue, saturation, lightness };
 };
 
-console.log(toSHLObject(randomHSLColor()));
-
 // invert HSL color, give complementary color
 const invertHSL = (hsl) => {
-    invertColor = [];
-    let hue = parseInt(hsl.slice(4, 7));
+    colorObject = toSHLObject(hsl);
+    let hue = colorObject.hue;
+    let saturation = colorObject.saturation;
+    let lightness = colorObject.lightness;
     if (hue <= 180) {
         hue += 180;
-        return hue;
+        colorObject.hue = hue;
+        return `hsl(${colorObject.hue}, ${colorObject.saturation}%, ${colorObject.lightness}%)`;
     } else {
         hue -= 180;
-        return hue;
+        colorObject.hue = hue;
+        return `hsl(${colorObject.hue}, ${colorObject.saturation}%, ${colorObject.lightness}%)`;
     }
 };
-console.log(invertHSL(randomHSLColor()));
-console.log(randomColor.s);
 
 //change colors
 const changeColor = () => {
@@ -39,6 +39,8 @@ const changeColor = () => {
     let invertColor = invertHSL(color);
     document.getElementById("page").style.backgroundColor = color;
     document.getElementById("color").innerHTML = color;
-    document.getElementById("color").style.color = "#" + invertColor;
-    document.getElementById("button").style.color = "#" + invertColor;
+    document.getElementById("color").style.color = invertColor;
+    document.getElementById("button").style.color = invertColor;
+    console.log(color);
+    console.log(invertColor);
 };
