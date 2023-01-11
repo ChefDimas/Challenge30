@@ -74,6 +74,34 @@ const shadeThree = (hsl) => {
     }
 };
 
+const copyButtonMain = document.getElementById("copyMain");
+copyButtonMain.addEventListener("click", (e) => {
+    const content = document.getElementById("color").textContent;
+    navigator.clipboard.writeText(content);
+    alert("Copied the color");
+});
+
+const copyButton1 = document.getElementById("copy1");
+copyButton1.addEventListener("click", (e) => {
+    const content = document.getElementById("hue1Name").textContent;
+    navigator.clipboard.writeText(content);
+    alert("Copied the color");
+});
+
+const copyButton2 = document.getElementById("copy2");
+copyButton2.addEventListener("click", (e) => {
+    const content = document.getElementById("hue2Name").textContent;
+    navigator.clipboard.writeText(content);
+    alert("Copied the color");
+});
+
+const copyButton3 = document.getElementById("copy3");
+copyButton3.addEventListener("click", (e) => {
+    const content = document.getElementById("hue3Name").textContent;
+    navigator.clipboard.writeText(content);
+    alert("Copied the color");
+});
+
 //change colors
 const changeColor = () => {
     let color = randomHSLColor();
@@ -82,15 +110,26 @@ const changeColor = () => {
     document.getElementById("color").innerHTML = color;
     document.getElementById("color").style.color = invertColor;
     document.getElementById("button").style.color = invertColor;
+
     //First Shade
     document.getElementById("hue1").style.backgroundColor = shadeOne(color);
-    document.getElementById("hue1").innerHTML = shadeOne(color);
+    document.getElementById("hue1Name").innerHTML = shadeOne(color);
+    document.getElementById("hue1Name").style.color = invertColor;
     //Second Shade
     document.getElementById("hue2").style.backgroundColor = shadeTwo(color);
-    document.getElementById("hue2").innerHTML = shadeTwo(color);
+    document.getElementById("hue2Name").innerHTML = shadeTwo(color);
+    document.getElementById("hue2Name").style.color = invertColor;
+
     //Third Shade
     document.getElementById("hue3").style.backgroundColor = shadeThree(color);
-    document.getElementById("hue3").innerHTML = shadeThree(color);
+    document.getElementById("hue3Name").innerHTML = shadeThree(color);
+    document.getElementById("hue3Name").style.color = invertColor;
+
+    //Copy buttons color
+    copyButtons = document.getElementsByClassName("copy");
+    for (let i = 0; i < copyButtons.length; i++) {
+        copyButtons[i].style.color = invertColor;
+    }
     console.log(color);
     console.log(invertColor);
 };
