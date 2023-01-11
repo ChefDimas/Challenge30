@@ -20,15 +20,23 @@ const toSHLObject = (hsl) => {
 const invertHSL = (hsl) => {
     colorObject = toSHLObject(hsl);
     let hue = colorObject.hue;
-    let saturation = colorObject.saturation;
     let lightness = colorObject.lightness;
+
     if (hue <= 180) {
-        hue += 180;
-        colorObject.hue = hue;
+        if (lightness <= 50) {
+            colorObject.lightness += 50;
+        } else {
+            colorObject.lightness -= 50;
+        }
+        colorObject.hue += 180;
         return `hsl(${colorObject.hue}, ${colorObject.saturation}%, ${colorObject.lightness}%)`;
     } else {
-        hue -= 180;
-        colorObject.hue = hue;
+        if (lightness <= 50) {
+            colorObject.lightness += 50;
+        } else {
+            colorObject.lightness -= 50;
+        }
+        colorObject.hue -= 180;
         return `hsl(${colorObject.hue}, ${colorObject.saturation}%, ${colorObject.lightness}%)`;
     }
 };
