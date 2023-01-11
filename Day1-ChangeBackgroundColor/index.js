@@ -41,6 +41,39 @@ const invertHSL = (hsl) => {
     }
 };
 
+const shadeOne = (hsl) => {
+    colorObject = toSHLObject(hsl);
+    if (colorObject.lightness >= 50) {
+        colorObject.lightness -= 8;
+        return `hsl(${colorObject.hue}, ${colorObject.saturation}%, ${colorObject.lightness}%)`;
+    } else {
+        colorObject.lightness += 8;
+        return `hsl(${colorObject.hue}, ${colorObject.saturation}%, ${colorObject.lightness}%)`;
+    }
+};
+
+const shadeTwo = (hsl) => {
+    colorObject = toSHLObject(hsl);
+    if (colorObject.lightness >= 50) {
+        colorObject.lightness -= 16;
+        return `hsl(${colorObject.hue}, ${colorObject.saturation}%, ${colorObject.lightness}%)`;
+    } else {
+        colorObject.lightness += 16;
+        return `hsl(${colorObject.hue}, ${colorObject.saturation}%, ${colorObject.lightness}%)`;
+    }
+};
+
+const shadeThree = (hsl) => {
+    colorObject = toSHLObject(hsl);
+    if (colorObject.lightness >= 50) {
+        colorObject.lightness -= 20;
+        return `hsl(${colorObject.hue}, ${colorObject.saturation}%, ${colorObject.lightness}%)`;
+    } else {
+        colorObject.lightness += 20;
+        return `hsl(${colorObject.hue}, ${colorObject.saturation}%, ${colorObject.lightness}%)`;
+    }
+};
+
 //change colors
 const changeColor = () => {
     let color = randomHSLColor();
@@ -49,6 +82,15 @@ const changeColor = () => {
     document.getElementById("color").innerHTML = color;
     document.getElementById("color").style.color = invertColor;
     document.getElementById("button").style.color = invertColor;
+    //First Shade
+    document.getElementById("hue1").style.backgroundColor = shadeOne(color);
+    document.getElementById("hue1").innerHTML = shadeOne(color);
+    //Second Shade
+    document.getElementById("hue2").style.backgroundColor = shadeTwo(color);
+    document.getElementById("hue2").innerHTML = shadeTwo(color);
+    //Third Shade
+    document.getElementById("hue3").style.backgroundColor = shadeThree(color);
+    document.getElementById("hue3").innerHTML = shadeThree(color);
     console.log(color);
     console.log(invertColor);
 };

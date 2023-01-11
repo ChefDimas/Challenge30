@@ -33,4 +33,21 @@ h1 {
 
 .right {
     width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.hue {
+    width: 100%;
+    min-height: 33.33333vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hue1,
+#hue2,
+#hue3 {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
