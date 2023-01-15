@@ -17,12 +17,21 @@ h1 {
     color: #5f0f40;
 }
 
+.invisible {
+    visibility: hidden;
+}
+
 .image {
     position: absolute;
     height: 200px;
     width: 200px;
     top: 115px;
+}
+.image1 {
     left: 31.5%;
+}
+.image2 {
+    right: 31.5%;
 }
 
 .players {
