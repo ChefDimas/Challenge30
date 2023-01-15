@@ -44,6 +44,7 @@ const start = () => {
         console.log(player1, player2);
     } else if (flag === true) {
         reset();
+        flag === false;
     } else {
         console.log("Error");
     }
