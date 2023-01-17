@@ -1,3 +1,4 @@
+// Add event listener to buttons
 for (let i = 0; i < document.querySelectorAll(".drum").length; i++) {
     document
         .querySelectorAll(".drum")
@@ -7,10 +8,12 @@ for (let i = 0; i < document.querySelectorAll(".drum").length; i++) {
         });
 }
 
+//Play sound on event
 document.addEventListener("keydown", function (event) {
     makeSound(event.key);
 });
 
+//Which sound to play
 const makeSound = (key) => {
     switch (key) {
         case "w":
