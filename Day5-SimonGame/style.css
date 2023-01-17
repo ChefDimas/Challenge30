@@ -1,0 +1,67 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #faedcd;
+    font-family: "Fira Code", serif;
+}
+
+h1 {
+    color: #fb8500;
+    font-size: 4rem;
+    padding: 3rem;
+}
+
+.buttons {
+    margin-top: 4rem;
+    min-height: 60vh;
+    min-width: 60vh;
+    border-radius: 50%;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Buttons */
+
+.button {
+}
+
+.green {
+    background-color: #132a13;
+}
+
+.red {
+    background-color: #590d22;
+}
+
+.yellow {
+    background-color: #ffc300;
+}
+
+.blue {
+    background-color: #184e77;
+}
+
+/* Hover */
+
+.green:hover {
+    background-color: #31572c;
+}
+
+.red:hover {
+    background-color: #800f2f;
+}
+
+.yellow:hover {
+    background-color: #ffd60a;
+}
+.blue:hover {
+    background-color: #1e6091;
+}
