@@ -1,10 +1,13 @@
 let level = 1;
+let flag = false;
+
 const green = $(".green");
 const red = $(".red");
 const yellow = $(".yellow");
 const blue = $(".blue");
 
 const colors = [green, red, yellow, blue];
+const gamePattern = [];
 
 //Random pick a color
 const randomColor = () => {
@@ -12,10 +15,9 @@ const randomColor = () => {
 };
 
 //Function to start the game
-const gameStart = () => {};
-
-//Generate Levels
-const generateLevels = () => {};
+const gameStart = () => {
+    while (flag === false) {}
+};
 
 //Main
 $("body").keypress(function () {

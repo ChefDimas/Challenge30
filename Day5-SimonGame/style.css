@@ -65,3 +65,17 @@ h1 {
 .blue:hover {
     background-color: #1e6091;
 }
+
+.green-active {
+    background-color: #31572c;
+    animation: blink 2s;
+}
+.red-active {
+    background-color: #800f2f;
+}
+.yellow-active {
+    background-color: #ffd60a;
+}
+.blue-active {
+    background-color: #1e6091;
+}
